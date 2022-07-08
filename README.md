@@ -1,8 +1,16 @@
 # Boilerplate pour vos applications modernes utilisant Webpack ainsi qu'un router
 ## How to use ?
 - Si vous ne l'avez pas fait, vous pouvez cloner le repo associé au boilerplate pour initier votre application : `git clone https://github.com/e-vinci/js-router-boilerplate.git` ou `git clone https://github.com/e-vinci/js-router-boilerplate.git nom-de-votre-projet` pour créer votre projet nommé `nom-de-votre-projet`.
-- Une fois le clone fait, Git vous a créé un repo local de votre projet ; n'hésitez pas à ajouter une `remote` pour pointer vers votre Web repository.
-- Si vous avez cloné votre projet au sein d'un repo existant, Git ne trackera pas ce nouveau projet ; pour vous assurer que Git traque votre projet, vous devez effacer le répertoire `.git` se trouvant dans votre nouveau projet. N'hésitez pas aussi à effacer `.gitignore` se trouvant dans votre nouveau projet.
+- **package.json** est le fichier de configuration de votre projet. Veuillez le mettre à jour afin de :
+    - donnnez un nom à votre projet & une description ;
+    - vous identifier comme auteur.
+- ⚡ Si vous avez cloné votre projet au sein d'un repo existant, Git ne trackera pas ce nouveau projet ; en effet, Git ne tracque pas des projets Git dans des projets Git.
+Pour vous assurer que Git traque votre nouveau projet imbriqué dans un repo, vous devez effacer le répertoire **.git** se trouvant dans votre nouveau projet. N'hésitez pas aussi à effacer **.gitignore** se trouvant dans votre nouveau projet.
+- Par contre, si vous souhaitez créer un nouveau repo à l'aide de votre boilerplate, 
+vous pouvez utiliser le **.gitignore** existant. Vous pouvez aussi éventuellement utiliser le 
+**.git**, mais cela signifie que vous hériterez de tous les changements associés au boilerplate, 
+et que vous devrez changer l'origine (`git remote remove origin`, `git remote add origin LINK_TO_YOUR_REPO`). Nous vous recommandons plutôt d'effacer le répertoire **.git** et de 
+réinitialiser un projet git (`git init`, `git remote add origin LINK_TO_YOUR_REPO`).
 - Installation des dépendances et démarrage du boilerplate : 
 ```shell
 cd nom-de-votre-projet # (le nom donné au répertoire de votre projet)
@@ -41,7 +49,7 @@ footer.appendChild(footerPhoto);
         - Appel du composant associé à la redirection (et auto-render du composant)
         - Affichage dans le browser de l’URL associée à l’élément redirigé
         - Garder l’URL dans l’historique
-- La configuration des routes est actuellement à faire au sein de `/Components/Router/Router.js`. Voici un exemple de configuration :
+- La configuration des routes est à faire au sein de `/Components/Router/routes.js`. Voici un exemple de configuration :
 ```js
 const routes = {
   "/": HomePage,
@@ -50,13 +58,12 @@ const routes = {
   "/logout": Logout,
 };
 ```
-- NB : Cette configuration pourrait être externalisée dans un fichier de configuration afin de rendre le code plus générique.
 - La `HomePage` n'est pas chargé dans `index.js.` C'est le rôle du Router de charger la bonne page en se focalisant sur l'URL.
 - De plus, il faut appeler le `Router` au sein de `index.js`
 
 ## Redirection d'une page vers une autre
-- La page doit faire appel à la fonction `Redirect` du `Router` pour rediriger vers une autre page. Dans ce boilerplate, un example est fourni pour la `NewPage` qui redirige vers la `HomePage` lors d'un clic sur un bouton.
-- Vous pouvez utiliser la fonction `Redirect` du `Router` en fonction de n'importe quel type d'événement : lors du succès de l'authentification, lors d'un clic sur un élément....
+- La page doit faire appel à la fonction `` du `Router` pour rediriger vers une autre page. Dans ce boilerplate, un example est fourni pour la `NewPage` qui redirige vers la `HomePage` lors d'un clic sur un bouton.
+- Vous pouvez utiliser la fonction `Navigate` présente dans `/src/Components/Router/Navigate.js/` en fonction de n'importe quel type d'événement : lors du succès de l'authentification, lors d'un clic sur un élément....
 
 ## Conclusion
 - L'utilisation de ce boilerplate permet d'avoir un serveur de développement hyper performant, de développer avec beaucoup de confort, de faciliter la structure d'un projet, de gérer les dépendances, de transformer les assets de manière centralisée, ...

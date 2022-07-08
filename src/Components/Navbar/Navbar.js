@@ -1,8 +1,5 @@
-// When using Bootstrap to style components, the CSS is imported in index.js
-// However, the JS has still to be loaded for each Bootstrap's component that needs it.
-// Here, because our JS component 'Navbar' has the same name as Navbar Bootstrap's component
-// we change the name of the imported Bootstrap's 'Navbar' component
-import { Navbar as BootstrapNavbar} from "bootstrap";
+// eslint-disable-next-line no-unused-vars
+import { Navbar as BootstrapNavbar } from 'bootstrap';
 
 /**
  * Render the Navbar which is styled by using Bootstrap
@@ -12,8 +9,8 @@ import { Navbar as BootstrapNavbar} from "bootstrap";
  */
 
 const Navbar = () => {
-  const navbarWrapper = document.querySelector("#navbarWrapper");
-  let navbar = `
+  const navbarWrapper = document.querySelector('#navbarWrapper');
+  const navbar = `
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Add your brand here</a>
@@ -40,7 +37,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-  `;  
+  `;
   navbarWrapper.innerHTML = navbar;
 };
 

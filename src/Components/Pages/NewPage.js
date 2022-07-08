@@ -1,25 +1,21 @@
-import HomePage from "./HomePage";
-import { Redirect } from "../Router/Router";
+import Navigate from '../Router/Navigate';
+import { clearPage } from '../../utils/render';
 
-/**
- * Render the NewPage :
- * Just an example to demonstrate how to use the router to "redirect" to a new page
- */
-function NewPage() {
-  // Deal with your NewPage content here
-  const pageDiv = document.querySelector("#page");
-  pageDiv.innerHTML = "";
-  // create a login form
-  const submit = document.createElement("input");
-  submit.value = "Go back to HomePage";
-  // Example on how to use Bootstrap to style a Button
-  submit.className = "btn btn-secondary mt-3";
-  // Example on how to add an event handler : when the button is clicked, redirect
-  // to the HomePage
-  submit.addEventListener("click", () => {
-    Redirect("/");
+const NewPage = () => {
+  clearPage();
+  renderGoBackHomeButton();
+};
+
+function renderGoBackHomeButton() {
+  const main = document.querySelector('main');
+  const submit = document.createElement('input');
+  submit.value = 'Go back to HomePage';
+  submit.className = 'btn btn-secondary mt-3';
+  submit.addEventListener('click', () => {
+    Navigate('/');
   });
-  pageDiv.appendChild(submit);
+
+  main.appendChild(submit);
 }
 
 export default NewPage;

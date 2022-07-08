@@ -1,10 +1,6 @@
-/**
- * Render the HomePage
- */
-
-const HomePage = () => { 
-  const pageDiv = document.querySelector("#page");
-  pageDiv.innerHTML = "Deal with the content of your HomePage";
+const HomePage = () => {
+  const main = document.querySelector('main');
+  main.innerHTML = 'Deal with the content of your HomePage';
 };
 
 export default HomePage;
