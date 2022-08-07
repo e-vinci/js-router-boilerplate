@@ -17,6 +17,19 @@ cd nom-de-votre-projet # (le nom donné au répertoire de votre projet)
 npm i # (equivalent de npm install)
 npm start
 ```
+
+## Utilisation du linter et du formater
+- Pour bénéficier de feedback sur le code lors de son écriture, par rapport au respect du style 
+des règles d'Airbnb, vous devez avoir installé l'extension **ESLint** au sein de VS Code. 
+- Pour que la configuration du formater offerte dans ce boilerplate soit utile, 
+vous devez avoir installé l'extension **prettier** au sein de VS Code.
+- vous pouvez facilement formatter votre code conformément au style d'Airbnb :
+    - soit en tapant **Shift Alt F** ;
+    - soit en faisant un clic droit sur votre script, **Format Document** ; la première fois, il se peut que vous deviez sélectionner **prettier** comme formater.
+- Pour info, la configuration des règles de **ESLint** se fait dans le fichier 
+**.eslintrc.js** devant se trouver à la racine d'un projet et offert au sein du boilerplate.
+- Pour info, la configuration des règles de **prettier** se fait dans le fichier 
+**.prettierrc.js** devant se trouver à la racine d'un projet et offert au sein du boilerplate.
 ## How to ? Ajout d'un package
 - Installation d'un package : `npm i nomDuPackage`
 Pour plus d'info sur un package, ou pour trouver un package traitant d'un sujet qui vous intéresse : https://www.npmjs.com
