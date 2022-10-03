@@ -16,6 +16,12 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist')
     },
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
     port: 8080,
     // host: '0.0.0.0', // server to be accessible externally
     host: 'localhost',
